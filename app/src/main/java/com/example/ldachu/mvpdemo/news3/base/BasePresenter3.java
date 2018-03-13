@@ -6,13 +6,19 @@ package com.example.ldachu.mvpdemo.news3.base;
  *             对Presenter层进行向上抽取
                 通过泛型+抽象子类就不需要写attach和detach方法
  */
-public  class BasePresenter<T extends BaseView> {
+public  class BasePresenter3<T extends BaseView3> {
     protected T mView;
 
     public void attach(T view){
         mView = view;
+        initProvider();
     };
     public  void detach(){
         mView = null;
     };
+
+    /**
+     * Rxcache缓存初始化
+     */
+    public void initProvider(){}
 }

@@ -1,22 +1,21 @@
-package com.example.ldachu.mvpdemo.news3;
+package com.example.ldachu.mvpdemo.news4;
 
 
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.ldachu.mvpdemo.R;
 import com.example.ldachu.mvpdemo.common.adapter.NewsAdapter;
-import com.example.ldachu.mvpdemo.common.base.BaseBindActivity;
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.databinding.ActivityMainBinding;
 import com.example.ldachu.mvpdemo.news3.base.BaseView3;
+import com.example.ldachu.mvpdemo.news4.base.BaseBindActivity4;
 
 import java.util.List;
 
 
-public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> implements BaseView3 {
+public class NewsActivity4 extends BaseBindActivity4<ActivityMainBinding,NewsPresenter4> implements BaseView3 {
 
-    private NewsAdapter          mNewsAdapter;
-    private NewsPresenter3 mNewsPresenter;
+    private NewsAdapter    mNewsAdapter;
 
     @Override
     protected int getLayoutId() {
@@ -24,12 +23,14 @@ public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> impleme
     }
 
     @Override
+    protected NewsPresenter4 createPresenter() {
+        return new NewsPresenter4();
+    }
+
+    @Override
     protected void initData() {
         super.initData();
-        mNewsPresenter = new NewsPresenter3();
-        //P层和V层的绑定
-        mNewsPresenter.attach(this);
-        mNewsPresenter.getNewsList("top");
+        mPresenter.getNewsList("top");
 
     }
 
@@ -45,12 +46,5 @@ public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> impleme
     public void showNewsList(List<NewsBean> data) {
         mNewsAdapter.setNewData(data);
         mNewsAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        //解除绑定
-        mNewsPresenter.detach();
     }
 }

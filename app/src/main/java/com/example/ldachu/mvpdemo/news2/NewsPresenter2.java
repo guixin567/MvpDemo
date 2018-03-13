@@ -23,6 +23,13 @@ public class NewsPresenter2 {
     private NewsProviders mProviders;
 
     public NewsPresenter2() {
+
+    }
+
+    /**
+     * 初始化Rxcache的Provider
+     */
+    private void initProvider() {
         File cacheDir = mNewsActivity.getApplication().getCacheDir();
 
         mProviders = new RxCache.Builder()
@@ -36,6 +43,7 @@ public class NewsPresenter2 {
      */
     public void attach(NewsActivity2 view){
         mNewsActivity = view;
+        initProvider();
     }
 
     /**

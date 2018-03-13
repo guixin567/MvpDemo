@@ -5,5 +5,5 @@ package com.example.ldachu.mvpdemo.news3.base;
  *         email 4994766@qq.com
  *         V层的接口，一般是UI的显示
  */
-public interface BaseView {
+public interface BaseView3 {
 }

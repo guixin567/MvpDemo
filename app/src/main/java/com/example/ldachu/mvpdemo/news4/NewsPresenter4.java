@@ -1,10 +1,10 @@
-package com.example.ldachu.mvpdemo.news3;
+package com.example.ldachu.mvpdemo.news4;
 
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.common.net.BaseObserver;
 import com.example.ldachu.mvpdemo.common.net.NetUtil;
 import com.example.ldachu.mvpdemo.common.net.api.NewsProviders;
-import com.example.ldachu.mvpdemo.news3.base.BasePresenter3;
+import com.example.ldachu.mvpdemo.news4.base.BasePresenter4;
 
 import java.io.File;
 import java.util.List;
@@ -19,13 +19,9 @@ import io.victoralbertos.jolyglot.GsonSpeaker;
  *         Email: 4994766@qq.com
  */
 
-public class NewsPresenter3 extends BasePresenter3<NewsActivity3> {
+public class NewsPresenter4 extends BasePresenter4<NewsActivity4> {
+
     private NewsProviders mProviders;
-
-    public NewsPresenter3() {
-
-    }
-
 
     public void getNewsList(String type) {
          mProviders.getNewsList(NetUtil.getInstance().getNewsApi().getNewsList(type))
