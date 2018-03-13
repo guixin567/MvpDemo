@@ -1,9 +1,9 @@
-package com.example.ldachu.mvpdemo.net;
+package com.example.ldachu.mvpdemo.common.net;
 
 import android.text.TextUtils;
 
-import com.example.ldachu.mvpdemo.net.api.NewsApi;
-import com.example.ldachu.mvpdemo.util.NetConfig;
+import com.example.ldachu.mvpdemo.common.net.api.NewsApi;
+import com.example.ldachu.mvpdemo.common.util.NetConfig;
 
 
 /**

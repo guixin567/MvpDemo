@@ -1,6 +1,6 @@
-package com.example.ldachu.mvpdemo.bean;
+package com.example.ldachu.mvpdemo.common.bean;
 
-import com.example.ldachu.mvpdemo.net.BaseResponse;
+import com.example.ldachu.mvpdemo.common.net.BaseResponse;
 
 import java.util.List;
 

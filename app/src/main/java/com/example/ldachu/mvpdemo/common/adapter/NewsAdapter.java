@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.adapter;
+package com.example.ldachu.mvpdemo.common.adapter;
 
 import android.support.annotation.Nullable;
 import android.widget.ImageView;
@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.example.ldachu.mvpdemo.R;
-import com.example.ldachu.mvpdemo.bean.NewsBean;
+import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 
 import java.util.List;
 

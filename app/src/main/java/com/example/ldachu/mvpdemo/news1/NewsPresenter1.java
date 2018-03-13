@@ -1,9 +1,9 @@
 package com.example.ldachu.mvpdemo.news1;
 
-import com.example.ldachu.mvpdemo.bean.NewsBean;
-import com.example.ldachu.mvpdemo.net.BaseObserver;
-import com.example.ldachu.mvpdemo.net.NetUtil;
-import com.example.ldachu.mvpdemo.net.api.NewsProviders;
+import com.example.ldachu.mvpdemo.common.bean.NewsBean;
+import com.example.ldachu.mvpdemo.common.net.BaseObserver;
+import com.example.ldachu.mvpdemo.common.net.NetUtil;
+import com.example.ldachu.mvpdemo.common.net.api.NewsProviders;
 
 import java.io.File;
 import java.util.List;
@@ -16,13 +16,14 @@ import io.victoralbertos.jolyglot.GsonSpeaker;
 /**
  * @author zxKueen on 2018-03-13 15:08
  *         Email: 4994766@qq.com
+ *
  */
 
-public class NewsPresenter {
-    private NewsActivity mNewsActivity;
+public class NewsPresenter1 {
+    private NewsActivity1 mNewsActivity;
     private NewsProviders mProviders;
 
-    public NewsPresenter(NewsActivity newsActivity) {
+    public NewsPresenter1(NewsActivity1 newsActivity) {
         mNewsActivity = newsActivity;
         File cacheDir = mNewsActivity.getApplication().getCacheDir();
         mProviders = new RxCache.Builder()

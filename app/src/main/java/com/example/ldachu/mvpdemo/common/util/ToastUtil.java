@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.util;
+package com.example.ldachu.mvpdemo.common.util;
 
 import android.content.Context;
 import android.view.Gravity;

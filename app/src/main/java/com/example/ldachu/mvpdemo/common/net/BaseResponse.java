@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.net;
+package com.example.ldachu.mvpdemo.common.net;
 
 /**
  * @author zxKueen 2018/3/10 13:23

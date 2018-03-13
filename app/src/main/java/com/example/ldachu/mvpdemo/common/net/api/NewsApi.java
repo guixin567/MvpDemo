@@ -1,6 +1,6 @@
-package com.example.ldachu.mvpdemo.net.api;
+package com.example.ldachu.mvpdemo.common.net.api;
 
-import com.example.ldachu.mvpdemo.bean.NewsBean;
+import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

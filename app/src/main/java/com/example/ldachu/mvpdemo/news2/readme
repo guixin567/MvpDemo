@@ -1,0 +1,4 @@
+存在的问题：
+    如果每个Presenter层都写attachView和detachView方法,会非常的麻烦
+解决方法：
+    对Presenter层进行向上抽取

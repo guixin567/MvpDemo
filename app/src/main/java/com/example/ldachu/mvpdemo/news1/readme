@@ -1,0 +1,7 @@
+将业务逻辑进行了分离出来
+存在的问题：
+    Presenter层通过构造方法进行View层的绑定
+    如果Activity销毁，还在进行网络请求会造成UI的改变，所以我们需要解除与View层的绑定
+解决方法：
+    通过attach(View view)进行View层的绑定
+    通过detach进行View层的解绑

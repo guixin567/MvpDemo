@@ -1,9 +1,9 @@
-package com.example.ldachu.mvpdemo.net;
+package com.example.ldachu.mvpdemo.common.net;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.example.ldachu.mvpdemo.util.ToastUtil;
+import com.example.ldachu.mvpdemo.common.util.ToastUtil;
 
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;

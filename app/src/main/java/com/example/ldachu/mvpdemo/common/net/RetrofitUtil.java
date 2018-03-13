@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.net;
+package com.example.ldachu.mvpdemo.common.net;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

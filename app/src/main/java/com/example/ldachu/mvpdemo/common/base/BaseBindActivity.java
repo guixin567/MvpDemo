@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.base;
+package com.example.ldachu.mvpdemo.common.base;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
