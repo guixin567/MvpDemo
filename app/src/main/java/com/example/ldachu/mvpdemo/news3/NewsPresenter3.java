@@ -4,6 +4,7 @@ import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.common.net.BaseObserver;
 import com.example.ldachu.mvpdemo.common.net.NetUtil;
 import com.example.ldachu.mvpdemo.common.net.api.NewsProviders;
+import com.example.ldachu.mvpdemo.news3.base.BasePresenter;
 
 import java.io.File;
 import java.util.List;
@@ -18,44 +19,30 @@ import io.victoralbertos.jolyglot.GsonSpeaker;
  *         Email: 4994766@qq.com
  */
 
-public class NewsPresenter3 {
-    private NewsActivity3 mNewsActivity;
+public class NewsPresenter3 extends BasePresenter<NewsActivity3> {
     private NewsProviders mProviders;
 
     public NewsPresenter3() {
-        File cacheDir = mNewsActivity.getApplication().getCacheDir();
+        File cacheDir = mView.getApplication().getCacheDir();
 
         mProviders = new RxCache.Builder()
                 .persistence(cacheDir,new GsonSpeaker())
                 .using(NewsProviders.class);
     }
 
-    /**
-     * 与View层进行绑定
-     * @param view
-     */
-    public void attachView(NewsActivity3 view){
-        mNewsActivity = view;
-    }
-
-    /**
-     * 当Activity销毁的时候进行Presenter层与View层的解绑
-     */
-    public void detachView(){
-        mNewsActivity = null;
-    }
 
     public void getNewsList(String type) {
          mProviders.getNewsList(NetUtil.getInstance().getNewsApi().getNewsList(type))
                  .observeOn(AndroidSchedulers.mainThread())
                  .subscribeOn(Schedulers.io())
-                 .subscribe(new BaseObserver<List<NewsBean>>(mNewsActivity) {
+                 .subscribe(new BaseObserver<List<NewsBean>>(mView) {
                      @Override
                      protected void onSuccess(List<NewsBean> data) {
-                         if(mNewsActivity!=null){
-                             mNewsActivity.showNewsList(data);
+                         if(mView!=null){
+                             mView.showNewsList(data);
                          }
                      }
                  });
     }
+
 }

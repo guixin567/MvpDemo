@@ -27,7 +27,7 @@ public class NewsActivity2 extends BaseBindActivity<ActivityMainBinding> {
         super.initData();
         mNewsPresenter = new NewsPresenter2();
         //P层和V层的绑定
-        mNewsPresenter.attachView(this);
+        mNewsPresenter.attach(this);
         mNewsPresenter.getNewsList("top");
 
     }
@@ -50,6 +50,6 @@ public class NewsActivity2 extends BaseBindActivity<ActivityMainBinding> {
     protected void onDestroy() {
         super.onDestroy();
         //解除绑定
-        mNewsPresenter.detachView();
+        mNewsPresenter.detach();
     }
 }

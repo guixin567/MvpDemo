@@ -34,14 +34,14 @@ public class NewsPresenter2 {
      * 与View层进行绑定
      * @param view
      */
-    public void attachView(NewsActivity2 view){
+    public void attach(NewsActivity2 view){
         mNewsActivity = view;
     }
 
     /**
      * 当Activity销毁的时候进行Presenter层与View层的解绑
      */
-    public void detachView(){
+    public void detach(){
         mNewsActivity = null;
     }
 

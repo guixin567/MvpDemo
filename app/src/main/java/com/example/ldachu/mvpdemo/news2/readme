@@ -1,4 +1,5 @@
 存在的问题：
-    如果每个Presenter层都写attachView和detachView方法,会非常的麻烦
+    如果每个Presenter层都写attach和detach方法,会非常的麻烦
 解决方法：
     对Presenter层进行向上抽取
+    通过泛型+抽象子类就不需要写attach和detach方法
