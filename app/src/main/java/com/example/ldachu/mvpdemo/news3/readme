@@ -2,9 +2,9 @@
     如果有多个Activity，每个Activity或者Fragment都需要调用Presenter的attach和detach方法
 解决方法：
     向上抽取+泛型
-    BaseActivity<P extends BasePresenter>
+    BaseActivity<P extends BasePresenter,V extends BaseView>
     在onCreate方法中
         创建P层对象（抽象方法让子类实现）
-        调用attach方法
+        调用attach方法(抽象方法让子类实现)
     在onDestroy方法中
         调用detach方法

@@ -1,0 +1,5 @@
+存在的问题：
+    没有对View层逻辑整理和Presenter层逻辑整理
+解决方法：
+    创建一个
+    NewsContract契约接口，再定义两个内部接口View，Presenter
