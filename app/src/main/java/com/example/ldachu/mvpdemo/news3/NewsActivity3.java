@@ -8,12 +8,12 @@ import com.example.ldachu.mvpdemo.common.adapter.NewsAdapter;
 import com.example.ldachu.mvpdemo.common.base.BaseBindActivity;
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.databinding.ActivityMainBinding;
-import com.example.ldachu.mvpdemo.news2.NewsPresenter2;
+import com.example.ldachu.mvpdemo.news3.base.BaseView;
 
 import java.util.List;
 
 
-public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> {
+public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> implements BaseView {
 
     private NewsAdapter          mNewsAdapter;
     private NewsPresenter3 mNewsPresenter;
@@ -28,7 +28,7 @@ public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> {
         super.initData();
         mNewsPresenter = new NewsPresenter3();
         //P层和V层的绑定
-        mNewsPresenter.attachView(this);
+        mNewsPresenter.attach(this);
         mNewsPresenter.getNewsList("top");
 
     }
@@ -51,6 +51,6 @@ public class NewsActivity3 extends BaseBindActivity<ActivityMainBinding> {
     protected void onDestroy() {
         super.onDestroy();
         //解除绑定
-        mNewsPresenter.detachView();
+        mNewsPresenter.detach();
     }
 }
