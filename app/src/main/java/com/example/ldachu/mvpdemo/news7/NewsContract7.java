@@ -1,8 +1,8 @@
-package com.example.ldachu.mvpdemo.news6;
+package com.example.ldachu.mvpdemo.news7;
 
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
-import com.example.ldachu.mvpdemo.news6.base.BasePresenter6;
-import com.example.ldachu.mvpdemo.news6.base.BaseView6;
+import com.example.ldachu.mvpdemo.news7.base.BasePresenter7;
+import com.example.ldachu.mvpdemo.news7.base.BaseView7;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import java.util.List;
  * @author zxKueen 2018/3/14 1:00
  *         email 4994766@qq.com
  */
-public abstract class NewsContract6 {
-    interface View extends BaseView6 {
+public abstract class NewsContract7 {
+    interface View extends BaseView7 {
         /**
          * 显示接口返回的数据
          * @param data
@@ -20,7 +20,7 @@ public abstract class NewsContract6 {
 
     }
 
-    abstract static class Presenter<V extends View> extends BasePresenter6<V> {
+    abstract static class Presenter<V extends View> extends BasePresenter7<V> {
         /**
          * 获取网络请求的数据
          * @param type

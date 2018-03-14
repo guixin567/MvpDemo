@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.news6;
+package com.example.ldachu.mvpdemo.news7;
 
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -6,7 +6,7 @@ import com.example.ldachu.mvpdemo.R;
 import com.example.ldachu.mvpdemo.common.adapter.NewsAdapter;
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.databinding.FragmentNewsBinding;
-import com.example.ldachu.mvpdemo.news6.base.BaseBindFragment6;
+import com.example.ldachu.mvpdemo.news7.base.BaseBindFragment7;
 
 import java.util.List;
 
@@ -15,20 +15,19 @@ import java.util.List;
  *         Email: 4994766@qq.com
  */
 
-public class NewsFragment6 extends BaseBindFragment6<FragmentNewsBinding,NewsFragment6,NewsPresenter6> implements NewsContract6.View{
+public class NewsFragment7 extends BaseBindFragment7<FragmentNewsBinding, NewsFragment7,NewsPresenter7> implements NewsContract7.View{
 
 
     private NewsAdapter mNewsAdapter;
-    private List<NewsBean> mData;
 
     @Override
-    public NewsFragment6 createView() {
+    public NewsFragment7 createView() {
         return this;
     }
 
     @Override
-    public NewsPresenter6 createPresenter() {
-        return new NewsPresenter6();
+    public NewsPresenter7 createPresenter() {
+        return new NewsPresenter7();
     }
 
     @Override
@@ -41,14 +40,14 @@ public class NewsFragment6 extends BaseBindFragment6<FragmentNewsBinding,NewsFra
     @Override
     protected void initData() {
         super.initData();
-        mPresenter.getNewsList("top");
+            mPresenter.getNewsList("top");
 
     }
 
     @Override
     protected void initAdapter() {
         super.initAdapter();
-        mBinding.rvNews.setLayoutManager(new LinearLayoutManager(this.getActivity()));;
+        mBinding.rvNews.setLayoutManager(new LinearLayoutManager(this.getContext()));;
         mNewsAdapter = new NewsAdapter(R.layout.recycle_item_news, null);
         mBinding.rvNews.setAdapter(mNewsAdapter);
 

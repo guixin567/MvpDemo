@@ -22,9 +22,11 @@ public class RetrofitUtil {
     private RetrofitUtil(String url) {
         //配置okhttpclient
         //日志拦截器
+        HttpLoggingInterceptor log = new HttpLoggingInterceptor();
+        log.setLevel(HttpLoggingInterceptor.Level.BODY);
         mOkHttpClient = new OkHttpClient.Builder()
                 //日志拦截器
-                .addInterceptor(new HttpLoggingInterceptor())
+                .addInterceptor(log)
                 .build();
 
         //Retrofit配置

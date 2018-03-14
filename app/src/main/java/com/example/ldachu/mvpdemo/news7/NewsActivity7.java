@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.news6;
+package com.example.ldachu.mvpdemo.news7;
 
 
 import android.os.Bundle;
@@ -8,13 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import com.example.ldachu.mvpdemo.R;
 
 
-public class NewsActivity6 extends AppCompatActivity{
+public class NewsActivity7 extends AppCompatActivity{
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news);
+        setContentView( R.layout.activity_news7);
     }
-
-
 }
