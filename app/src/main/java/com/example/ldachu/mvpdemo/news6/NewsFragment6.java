@@ -1,35 +1,41 @@
-package com.example.ldachu.mvpdemo.news5;
-
+package com.example.ldachu.mvpdemo.news6;
 
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.example.ldachu.mvpdemo.R;
 import com.example.ldachu.mvpdemo.common.adapter.NewsAdapter;
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
-import com.example.ldachu.mvpdemo.databinding.ActivityMainBinding;
-import com.example.ldachu.mvpdemo.news5.base.BaseBindActivity5;
+import com.example.ldachu.mvpdemo.databinding.FragmentNewsBinding;
+import com.example.ldachu.mvpdemo.news6.base.BaseFragment6;
 
 import java.util.List;
 
+/**
+ * @author zxKueen on 2018-03-14 9:50
+ *         Email: 4994766@qq.com
+ */
 
-public class NewsActivity5 extends BaseBindActivity5<ActivityMainBinding,NewsActivity5,NewsPresenter5> implements NewsContract5.View{
+public class NewsFragment6 extends BaseFragment6<FragmentNewsBinding,NewsFragment6,NewsPresenter6> implements NewsContract6.View{
 
-    private NewsAdapter    mNewsAdapter;
+
+    private NewsAdapter mNewsAdapter;
 
     @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
-    }
-
-    @Override
-    protected NewsActivity5 createView() {
+    public NewsFragment6 createView() {
         return this;
     }
 
     @Override
-    protected NewsPresenter5 createPresenter() {
-        return new NewsPresenter5();
+    public NewsPresenter6 createPresenter() {
+        return new NewsPresenter6();
     }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.fragment_news;
+    }
+
+
 
     @Override
     protected void initData() {
@@ -41,7 +47,7 @@ public class NewsActivity5 extends BaseBindActivity5<ActivityMainBinding,NewsAct
     @Override
     protected void initAdapter() {
         super.initAdapter();
-        mBinding.rvNews.setLayoutManager(new LinearLayoutManager(this));;
+        mBinding.rvNews.setLayoutManager(new LinearLayoutManager(this.getContext()));;
         mNewsAdapter = new NewsAdapter(R.layout.recycle_item_news, null);
         mBinding.rvNews.setAdapter(mNewsAdapter);
 
@@ -52,4 +58,6 @@ public class NewsActivity5 extends BaseBindActivity5<ActivityMainBinding,NewsAct
         mNewsAdapter.setNewData(data);
         mNewsAdapter.notifyDataSetChanged();
     }
+
+
 }

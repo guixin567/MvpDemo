@@ -1,5 +1,5 @@
 存在的问题：
-    没有对View层逻辑整理和Presenter层逻辑整理
+    Activity可以实现MVP，Fragment同样可以
 解决方法：
-    创建一个
-    NewsContract契约接口，再定义两个内部接口View，Presenter
+    同样创建BaseFragment,利用泛型+抽象，在Fragment基类中进行attach和detach
+    不确定的对象，可以利用抽象方法在子类实现

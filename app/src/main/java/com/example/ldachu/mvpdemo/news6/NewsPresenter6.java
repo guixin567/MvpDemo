@@ -1,4 +1,4 @@
-package com.example.ldachu.mvpdemo.news5;
+package com.example.ldachu.mvpdemo.news6;
 
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.common.net.BaseObserver;
@@ -18,7 +18,7 @@ import io.victoralbertos.jolyglot.GsonSpeaker;
  *         Email: 4994766@qq.com
  */
 
-public class NewsPresenter5 extends NewsContract5.Presenter<NewsActivity5>{
+public class NewsPresenter6 extends NewsContract6.Presenter<NewsFragment6>{
 
     private NewsProviders mProviders;
 
@@ -27,7 +27,7 @@ public class NewsPresenter5 extends NewsContract5.Presenter<NewsActivity5>{
          mProviders.getNewsList(NetUtil.getInstance().getNewsApi().getNewsList(type))
                  .observeOn(AndroidSchedulers.mainThread())
                  .subscribeOn(Schedulers.io())
-                 .subscribe(new BaseObserver<List<NewsBean>>(mView) {
+                 .subscribe(new BaseObserver<List<NewsBean>>(mView.getContext()) {
                      @Override
                      protected void onSuccess(List<NewsBean> data) {
                          if(mView!=null){
@@ -39,7 +39,7 @@ public class NewsPresenter5 extends NewsContract5.Presenter<NewsActivity5>{
 
      @Override
      public void initProvider() {
-        File cacheDir = mView.getApplication().getCacheDir();
+        File cacheDir = mView.getContext().getCacheDir();
         mProviders = new RxCache.Builder()
                 .persistence(cacheDir,new GsonSpeaker())
                 .using(NewsProviders.class);

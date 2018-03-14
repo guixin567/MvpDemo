@@ -10,7 +10,7 @@ import java.util.List;
  * @author zxKueen 2018/3/14 1:00
  *         email 4994766@qq.com
  */
-public abstract class NewsContract{
+public abstract class NewsContract5 {
     interface View extends BaseView5 {
         /**
          * 显示接口返回的数据
