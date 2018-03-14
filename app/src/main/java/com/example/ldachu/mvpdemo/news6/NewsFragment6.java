@@ -6,7 +6,7 @@ import com.example.ldachu.mvpdemo.R;
 import com.example.ldachu.mvpdemo.common.adapter.NewsAdapter;
 import com.example.ldachu.mvpdemo.common.bean.NewsBean;
 import com.example.ldachu.mvpdemo.databinding.FragmentNewsBinding;
-import com.example.ldachu.mvpdemo.news6.base.BaseFragment6;
+import com.example.ldachu.mvpdemo.news6.base.BaseBindFragment6;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import java.util.List;
  *         Email: 4994766@qq.com
  */
 
-public class NewsFragment6 extends BaseFragment6<FragmentNewsBinding,NewsFragment6,NewsPresenter6> implements NewsContract6.View{
+public class NewsFragment6 extends BaseBindFragment6<FragmentNewsBinding,NewsFragment6,NewsPresenter6> implements NewsContract6.View{
 
 
     private NewsAdapter mNewsAdapter;

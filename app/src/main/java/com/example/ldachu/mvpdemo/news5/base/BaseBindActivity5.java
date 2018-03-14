@@ -22,6 +22,12 @@ public abstract class BaseBindActivity5<T extends ViewDataBinding,V extends Base
 
         //在子类创建Presenter层的子类对象，在BaseBindingActivity中
         mPresenter = createPresenter();
+        if(mPresenter==null){
+            throw new NullPointerException("MVP Presenter is Null");
+        }
+        if(createView() == null){
+            throw new NullPointerException("MVP View is Null");
+        }
         //P层和V层的绑定
         mPresenter.attach(createView());
 

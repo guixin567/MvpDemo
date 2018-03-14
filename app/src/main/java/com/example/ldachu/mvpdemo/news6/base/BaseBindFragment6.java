@@ -16,7 +16,7 @@ import android.view.ViewGroup;
  *         attach中用到的对象不确定的可以在子类实现
  */
 
-public abstract class BaseFragment6<D extends ViewDataBinding,V extends BaseView6,P extends BasePresenter6<V>> extends Fragment{
+public abstract class BaseBindFragment6<D extends ViewDataBinding,V extends BaseView6,P extends BasePresenter6<V>> extends Fragment{
 
     protected D mBinding;
     protected P mPresenter;
@@ -25,7 +25,16 @@ public abstract class BaseFragment6<D extends ViewDataBinding,V extends BaseView
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mPresenter = createPresenter();
+        if(mPresenter == null){
+            throw  new NullPointerException("MVP Presenter is Null");
+        }
+
+        if(createView() == null){
+            throw new NullPointerException("MVP View is Null");
+        }
+
         mPresenter.attach(createView());
     }
 

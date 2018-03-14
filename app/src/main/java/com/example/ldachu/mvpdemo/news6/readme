@@ -1,0 +1,27 @@
+存在的问题：
+    BaseBindActivity和BaseBindFragment中对attach和detach方法处理相同，代码冗余
+解决方法：
+    抽取+泛型
+
+    BaseMvp<V extends BaseView,P extends BasePresenter>
+        P createPresenter()
+        V createView()
+
+
+    Mvp<V extends BaseView,P extends BasePresenter>
+        BaseMvp mvp;
+        new Mvp(BaseMvp<V,P> mvp){
+            init();
+        }
+
+        init(){
+            //进行presenter和view判断并绑定
+
+        }
+
+        onDestroy(){
+            presenter.detach();
+        }
+
+
+
